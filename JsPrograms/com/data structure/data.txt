@@ -1,0 +1,1 @@
+A function can have multiple parameters or no parameters at all. In the following example

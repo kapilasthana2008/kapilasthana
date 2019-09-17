@@ -5,32 +5,25 @@ let num =parseInt( util.data.input())
 
 if(isNaN(num)|| num > 128)
 {
-    console.log("It may not a number or may be exceed from 128.")
+    console.log("It may be not a number or may be exceeded from 128.")
 }
 else{
-    var arr = findBin(num)
+    var arr = findBin(num);
+   
 }
-
 
 //function to get binary digit
 function findBin(deci)
 {
-    var arr = []
-   
-    if(isNaN(deci))
-    {
-        console.log("your entered decimal is may be greater 128 or may not a number.")
-        return
-    }
-    else{
+    var arr = new Array(8)  
+
         var bin = deci.toString(2)
-        console.log(`binary is ${bin}`)
-    
-        for(let i = bin.length-1;i>=0;i--)
+       
+        console.log(`array length is ${arr.length} binary is ${bin}`)
+        for(let i = 0;i< bin.length;i++)
         {
-            console.log(bin[i])
-            arr.push(parseInt(bin[i]))
+            arr[i] = parseInt(bin[i]);
+            
         }
         return arr
-    }
 }
