@@ -1,4 +1,5 @@
 
+const util = require("../functions/temp")
 const fs = require("fs")
 // reading file 
 let file = fs.readFileSync("data.txt","utf8")
@@ -9,9 +10,10 @@ let array = file.split(' ')
 
 class Node{
     
-    constructor(word,next = null)
+    constructor(data)
     {
-        this.value = word        
+        this.data = data 
+        this.next = null       
     }
 }
 
