@@ -21,7 +21,7 @@ else{
     var stringtochar1 = string1.split('')
     
     /*sorting character array and join all chars to make whole string(i.e. char araay
-     * converting back to string)
+     * converting back to string after sorting)
      */
     var sorted1 = input.data.sort(stringtochar1).join("");
     //converting string1 into character array

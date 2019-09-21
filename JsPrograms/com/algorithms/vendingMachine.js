@@ -22,6 +22,7 @@ const changeNotes = function(amount,notesArr,len)
         //if note is equal and less than the amount then count the notes.
             if(notesArr[len] <= amount)
             {
+                // if note is equal and less than the amount then updating count number of notes.
                 let count = Math.floor(amount/notesArr[len])   
                 console.log(`${notesArr[len]}*${count} = ${notesArr[len]*count}`) 
                 amount = amount%notesArr[len];
