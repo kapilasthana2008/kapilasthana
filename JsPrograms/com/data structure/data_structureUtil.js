@@ -10,7 +10,7 @@ var size = 0
 let arr = []
 let front = 0
 let rear = 0
-
+let count = 0
 // Node class..
 class Node{
     // constructor for initialize node data and next.
@@ -28,15 +28,42 @@ class LinkedList
     {
         // initialilly head is null
         this.head = null
+        this.last = null
     }
 //======= inserting elements to the end. of linklist =============================================================
+   
+// inserting into first 
+    insertFirst(ele)
+    {
+       
+        let node = new Node(ele)
+        
+        if(!this.head)
+        {
+            this.head = node 
+            this.last = node
+        }else{
+            let temp = this.head
+
+            node.next = temp
+            this.head = node
+        }
+
+    }
+    /**
+     *  function for inserting element into last node of the list.
+     *  
+     * 
+     */
     insertEle(data)
     {
+        count += 1
         // creating object of node class.
         let node = new Node(data)
         let current
+   
         // checking head is null or not
-        if(!this.head)
+        if(this.head === null)
         {
             //if head is null asigning node to head
             this.head = node 
@@ -51,7 +78,8 @@ class LinkedList
                 current = current.next
             }
             current.next = node
-            console.log("node inserted",current.data)
+           
+           
 
         }
     }
@@ -107,6 +135,31 @@ class LinkedList
         }
 
     }
+
+    removeSingleEle(ele){
+       
+        
+        if(count === 1)
+        {
+            this.head = null
+            count = 0
+        }else{
+           // console.log("not removed")
+        }
+        
+    }
+
+
+    isEmpty()
+    {
+        if(this.head === null)
+        {
+            return true
+        }
+        else{
+            return false
+        }
+    }
 // read all node to creating array and return final array..
     getArray()
     {
@@ -128,13 +181,54 @@ return array
     plrintEle()
     {
         let current = this.head
-       
-        while(current)
+     
+        if (this.head === null)
         {
-            console.log(current.data)
-            current = current.next
+            console.log("list empty")
         }
+        else{
+            while(current)
+            {
+               
+                console.log(current.data)
+                current = current.next
+            }
+        }
+       
     }
+
+    // reversePrint()
+    // {
+    //    if(this.head === null)
+    //    {
+    //        console.log("list is empty")
+    //    }
+    //    else{
+            
+    //         let temp = this.head.next
+    //         let prev = this.head
+
+    //         while(temp.next !== this.last)
+    //         {
+    //             prev = temp
+    //             temp = temp.next
+                
+    //         }
+    //         if(temp !== this.head)
+    //         { 
+    //             console.log("data",this.last.data)
+    //             this.last = temp
+    //             methods.reversePrint()
+    //         }
+           
+    //             // console.log(temp.data)
+            
+    //         // console.log("prev data",prev.data)
+
+    //         // console.log("data",temp.data)
+
+    //    }
+    // }
 // function for sorting list data.
     sortList()
     {
@@ -178,7 +272,12 @@ let link = new LinkedList()
 
 
 
- 
+ methods.insertFirst = function(data)
+{
+  // calling function for inserting element.
+    link.insertFirst(data)
+   
+}
 // function expression for inserting element.
 methods.insertElement = function(data)
 {
@@ -192,6 +291,10 @@ methods.printElement = function()
  link.plrintEle()
 
 }
+// methods. reversePrint = function()
+// {
+//     link. reversePrint()
+// }
 // function expression for searching element
 methods.searchElement = function(value)
 {
@@ -205,6 +308,16 @@ methods.removeElement = function(value)
 {
  let bool = link.removeEle(value)
  // returning boolean 
+    return bool
+}
+methods.removeSingleEle = function(value)
+{
+    let bool = link.removeSingleEle(value)
+    return bool
+}
+methods.isEmpty = function()
+{
+    let bool = link.isEmpty()
     return bool
 }
 // function expression for convert linklist nodes into array.
@@ -326,7 +439,137 @@ methods.arrayCreate = function(value)
     }
 return obj
 }
+/**
+ * 
+ * 
+ */
 
+methods.monthCheck = function(month)
+{
+    const months31 = ["Jan","March","May","July","Aug","Oct","Dec"]
+
+    for(let i = 0; i<months31.length;i++)
+    {
+        if(months31[i] === month)
+        {
+            return true
+        }
+    }
+    return false
+}
+
+methods.primeCheck =function(n)
+{
+    if (n===1)
+    {
+     return false;
+    }
+    else if(n === 2)
+    {
+      return true;
+    }else
+    {
+      for(var x = 2; x < n; x++)
+     {
+        if(n % x === 0)
+        {
+          return false;
+        }
+     }
+    return true;  
+  }
+
+}
+methods.BubbleSortStr = function(str)
+{
+    try {
+        if(typeof str == "string")
+        {
+            var s = str.split("");
+            var temp;
+
+            for(let i=0;i<s.length;i++)
+            {
+                for(let j=i+1;j<s.length;j++)
+                {
+                    if(s[i]>s[j])
+                    {
+                        temp = s[i];
+                        s[i] = s[j];
+                        s[j] = temp;
+                    }
+                }
+            }
+            return s.join("");
+        }
+        throw "Enter valid Input"; 
+    } catch (error) {
+        return error;
+    }
+}
+methods.isAnagram = function(str1,str2)
+{
+    try {
+        if(str1!=null&&str2!=null)
+        {
+            var sort1 = this.BubbleSortStr(str1);
+            var sort2 = this.BubbleSortStr(str2);
+            return (sort1===sort2);
+        }
+        throw "Enter valid Input";
+    } catch (error) {
+        return error;
+    }
+ 
+    
+      
+}
+
+methods.Array_2D = function(row,col)
+{
+    try {
+        if(!isNaN(row)&&!isNaN(col))
+        {
+            var Arr = new Array(row);
+            for(let i=0;i<row;i++)
+            {
+                Arr[i] = new Array(col);
+            }
+            return Arr;
+        }
+    } catch (error) {
+        return error;
+    } 
+
+}
+/** 
+ * 
+ * Method factorial is used for find factorial.
+ * receives an argument number type.
+ * calculating then returning result.
+ * formula : -  5*4*3*2*1 = 120;
+*/
+methods.factorial = function(num)
+{
+    if(num === 1 || num === 0)
+    {
+        return 1
+    }
+    else{
+        return num*(methods.factorial(num-1))
+    }
+}
+/** 
+ * 
+ * Method catlanNum is used for find number of binary search tree.
+ * receives an argument number type.
+ * calculating then returning result.
+ * formula : -  (2n)! / ((n + 1)! * n!)
+*/
+methods.catlan = function(num)
+{
+   return (methods.factorial(2*num))/(methods.factorial(num+1)*methods.factorial(num))
+}
 // exporting all methods.
 exports.data = methods
 

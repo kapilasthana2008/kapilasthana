@@ -13,7 +13,7 @@ if((m>12)||(d>31)||y<1000)
     console.log("wron input.")
 }
 else{ 
-		var day = util.three(d, m, y);
+		var day = util. day_week(d, m, y);
         console.log(day)
 		switch (day) {
 		case 0:

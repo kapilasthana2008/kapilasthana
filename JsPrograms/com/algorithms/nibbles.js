@@ -2,16 +2,6 @@ const util = require("./utility")
 console.log("enter number to find nibbles")
 let num =parseInt( util.data.input())
 
-
-if(isNaN(num)|| num > 128)
-{
-    console.log("It may be not a number or may be exceeded from 128.")
-}
-else{
-    var arr = findBin(num);
-   
-}
-
 //function to get binary digit
 function findBin(deci)
 {

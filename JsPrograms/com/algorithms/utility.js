@@ -194,4 +194,22 @@ methods.binarySearch = function(lower,num)
     }
     return low
 }
+
+// method for find binary.
+methods.findBin = function(num)
+{
+    if(isNaN(num)|| num > 128)
+    {
+        console.log("It may be not a number or may be exceeded from 128.")
+    }else{
+        
+        try {
+            
+            
+        } catch (error) {
+            
+        }
+    }
+    
+}
 exports.data = methods
