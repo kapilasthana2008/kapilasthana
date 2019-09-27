@@ -3,7 +3,7 @@
  * 
  * @author   : kapil asthana
  * Date      : 21/09/2019
- * program   : Number of Binary Search tree.
+ * program   : Number of Binary Search tree and number of binary tree.
  * 
  **/
 
@@ -15,24 +15,6 @@ const input = require("../algorithms/utility")
 // taking input by user
 console.log("enter number for find posibilities of BST.")
 let num = parseInt(input.data.input()) 
-
-
-try {
-    
-    if(typeof num === "number")
-    {
-        var result = 0
-          
-          if(!isNaN(num))
-          {
-            result = util.data.catlan(num)
-         
-          }
-    }
-} catch (error) {
-    
-    console.log(error)
-}
 
 
 //Count of BST

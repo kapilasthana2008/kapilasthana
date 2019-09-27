@@ -21,7 +21,7 @@ let rownum = 0
 let colnum = 0
 let range = 100
 
-// storing prime numbers into array. 
+// storing prime numbers into 2d array. 
 for(let i=2;i<=1000;i++)
 {
     if(util.data.primeCheck(i) && i<=range)

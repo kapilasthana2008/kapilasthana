@@ -6,7 +6,18 @@ methods.input = function()
 {
     // takes user input
     const input = require("readline-sync")
+                
     var num = input.question();
+    // returning input.
+    return num;
+}
+
+methods.numInput = function()
+{
+    // takes user input
+    const input = require("readline-sync")
+                
+    var num = input.questionInt();
     // returning input.
     return num;
 }

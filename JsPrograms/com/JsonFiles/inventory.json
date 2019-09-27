@@ -1,0 +1,24 @@
+{
+
+    "inventory" :[
+        {
+            "pulse":{
+                "name": "Green Grams",
+                "wheight":"37",
+                "Price_per_kg":"80"
+            }
+        },{
+            "Rice":{
+                "name": "Basmati",
+                "wheight":"20",
+                "Price_per_kg":"79"
+            }
+        },{
+            "Wheat":{
+                "name": "Ashirvad",
+                "wheight":"67",
+                "Price_per_kg":"40"
+            }
+        }
+    ]
+}

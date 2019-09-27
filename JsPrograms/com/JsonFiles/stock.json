@@ -1,0 +1,30 @@
+{
+
+    "stock":[
+        {
+
+        "stock_name":"Bharti Axa",
+        "Number_of_share": "15",
+        "price":"1500"
+        },
+        
+        {
+
+         "stock_name":"Tata Aige",
+         "Number_of_share": "10",
+         "price":"2000"
+         },
+      
+         {
+         "stock_name":"Reliance",
+         "Number_of_share": "20",
+         "price":"1200"
+         },
+         {
+            "stock_name":"BirlaSunLife",
+            "Number_of_share": "23",
+            "price":"3500"
+            }
+        
+        ]
+}

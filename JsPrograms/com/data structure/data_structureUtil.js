@@ -109,24 +109,34 @@ class LinkedList
             return false
         }
     }
+    /** 
+     *  removeEle(value) function is the function which accepting arg
+     *  then find it entire list if found then delete that node.
+     * 
+    */
 // removing element from list.
     removeEle(value)
     {
-       // if list is empty
+        try {
+            
+            // if list is empty
         if(this.head == null)
         {
             console.log("list is empty")
         }
         else{
-            
+            // storing head into temp 
             let temp = this.head
+            // taking previous temprary node
             let prevtemp = this.head
             // until data is found for delete node.
             while(temp.next)
             {
+                // traverseing of previous node  upto last temp-1.
                 prevtemp = temp;
+                // traversing node upto last node.
                 temp =temp.next;
-               
+               // if data found in any node then deleting that node.
                 if(temp.data === value)
                 {
                     prevtemp.next = temp.next
@@ -134,6 +144,9 @@ class LinkedList
             }
         }
 
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     removeSingleEle(ele){
@@ -148,7 +161,11 @@ class LinkedList
         }
         
     }
-
+    /** 
+     *  isEmpty() function is the function which returns list status
+     *  if list is empty true otherwise it will return false.
+     * 
+    */
 
     isEmpty()
     {
@@ -174,8 +191,13 @@ class LinkedList
             current = current.next
         }
         //returning final array.
-return array
+    return array
     }
+
+    /**
+     *   plrintEle() function is a function that print entire list data.
+     * 
+     */
 
 //printing all nodes data.
     plrintEle()
@@ -197,38 +219,6 @@ return array
        
     }
 
-    // reversePrint()
-    // {
-    //    if(this.head === null)
-    //    {
-    //        console.log("list is empty")
-    //    }
-    //    else{
-            
-    //         let temp = this.head.next
-    //         let prev = this.head
-
-    //         while(temp.next !== this.last)
-    //         {
-    //             prev = temp
-    //             temp = temp.next
-                
-    //         }
-    //         if(temp !== this.head)
-    //         { 
-    //             console.log("data",this.last.data)
-    //             this.last = temp
-    //             methods.reversePrint()
-    //         }
-           
-    //             // console.log(temp.data)
-            
-    //         // console.log("prev data",prev.data)
-
-    //         // console.log("data",temp.data)
-
-    //    }
-    // }
 // function for sorting list data.
     sortList()
     {
@@ -568,7 +558,13 @@ methods.factorial = function(num)
 */
 methods.catlan = function(num)
 {
-   return (methods.factorial(2*num))/(methods.factorial(num+1)*methods.factorial(num))
+    try {
+        return (methods.factorial(2*num))/(methods.factorial(num+1)*methods.factorial(num))
+    } 
+    catch (error) {
+        console.log(error)
+    }
+  
 }
 // exporting all methods.
 exports.data = methods

@@ -1,34 +1,16 @@
-
-/** 
+/**
+ * Regex :
+ *      systax: /pattern/modifier
+ *               String / ig ->  i stands for insensitive
+ *                               g stands for global it uses for global match
  * 
- * nested function 
-*/
+ *     methods:
+ * 
+ *      search() = it returns that string's start index
+ *      replace() = it returns entire string with replaced value
+ *      
+ *  */
 
-var landscape = function()
-{
-    var result = ""
+var str = "value of THAT expression will replace the it is not ergrt note given argument"
 
-    var flat = function(size)
-    {
-        for(let i = 0; i<size;i++)
-        {
-            result += "_"
-        }
-    };
-
-    var mount = function(size)
-    {
-         result += "/"
-        for(let i = 0; i<size;i++)
-        {
-             result += ""
-            result += "\\"
-        }
-    };
-    flat(3)
-    mount(4)
-    flat(6)
-return result;
-}
-
-console.log(landscape())
+console.log(str.replace(/anurag/ig,"kapil's")) // -> Regex /pattern/modifier
