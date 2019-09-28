@@ -3,10 +3,11 @@ var methods = {};
 const fs = require("fs")
 let data = fs.readFileSync("../JsonFiles/inventory.json")
 let stock_file = fs.readFileSync("../JsonFiles/stock.json")
-
 let inventoryData = JSON.parse(data)
 let stock_data = JSON.parse(stock_file)
+
 let stockArr = stock_data.stock
+
 // fetching data from json file.
 let DataArray = inventoryData.inventory
 

@@ -1,7 +1,9 @@
 const util = require("../data structure/data_structureUtil")
 const input = require("../algorithms/utility")
+
 const json_data = require("../jsonDataAccess/dataAccess")
 const oop_utility = require("./oops_utility")
+
 let fetch = null,total = 0
 let stock_data = json_data.data.stockData()
 
