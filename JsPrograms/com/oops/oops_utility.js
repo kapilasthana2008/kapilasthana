@@ -5,10 +5,21 @@ const fs = require("fs")
 var methods = {};
 
 
-/** 
- * 
- * 
-*/
+class person{
+
+    constructor(id,first_name,last_name,address,city,state,postal_zip,contact_no){
+        this.id = id
+        this.first_name = first_name
+        this.last_name = last_name
+        this.address = address
+        this.city = city
+        this.state = state
+        this.postal_zip = postal_zip
+        this.contact_no = contact_no
+    }
+}
+
+
 
 methods.rice = function(arr)
 {
@@ -65,6 +76,28 @@ methods.stock_data = function(arr,i)
     return arr[i]
 }
 
+
+methods.readFile = function(source){
+
+    const fs = require("fs")
+    const file = fs.readFileSync(source,"utf8")
+    let data = JSON.parse(file)
+
+    return data
+}
+
+methods.writeFile = function(path,obj)
+{
+    let fs = require("fs")
+    let jsonObj = JSON.stringify(obj)
+
+    fs.writeFile(path,jsonObj,err=>{
+        if(err)
+        throw err
+           
+       })
+}
+
 methods.menu_book = function()
 {
     console.log("enter your choice")
@@ -78,7 +111,7 @@ methods.menu_book = function()
 
 methods.update_address_book = function(address_book_data,userData)
 {
-    console.log("inside")
+  
     address_book_data.address_book.push(userData)
     let jsonObj = JSON.stringify(address_book_data)
     
@@ -103,8 +136,12 @@ methods.dataaddUser = function()
         "state": ValInput.question("state: "),
         "postal_zip": ValInput.question("postal_zip: "),
         "contact_no": ValInput.question("contact_no: ")
-    }   
-return details   
+    }  
+    
+ let obj = new person(details.id,details.first_name,details.last_name,details.address,details.city,details.state,details.postal_zip,details.contact_no)
+return obj
+//  return details   
 }
+
 
 exports.data = methods
