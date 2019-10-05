@@ -206,6 +206,15 @@ methods.binarySearch = function(lower,num)
     return low
 }
 
+methods.ArrayMatrix = function(rows,cols)
+{
+    var myarr1 = new Array(rows)
+
+    for (var i  = 0; i<rows ;i++) {
+        myarr1[i] = new Array(cols);
+    }
+    return myarr1
+}
 // method for find binary.
 methods.findBin = function(num)
 {

@@ -566,6 +566,11 @@ methods.catlan = function(num)
     }
   
 }
+
+methods.DeckQueue = function(){
+    
+return new LinkedList()
+}
 // exporting all methods.
 exports.data = methods
 
